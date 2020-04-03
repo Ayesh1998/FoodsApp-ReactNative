@@ -1,16 +1,35 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Button } from "react-native";
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp
 } from "react-native-responsive-screen";
+import { MEALS } from "../data/dummy";
 
 const MealDetailsScreen = props => {
+  const mealId = props.navigation.getParam("mealId");
+
+  const selectedMeal = MEALS.find(meal => meal.id === mealId);
+
   return (
     <View style={styles.screen}>
-      <Text>MealDetailsScreen screen</Text>
+      <Text>{selectedMeal.title}</Text>
+      <Button
+        title="Go Back to Categories"
+        onPress={() => {
+          props.navigation.popToTop();
+        }}
+      />
     </View>
   );
+};
+
+MealDetailsScreen.navigationOptions = navigationData => {
+  const mealId = navigationData.navigation.getParam("mealId");
+  const selectedMeal = MEALS.find(meal => meal.id === mealId);
+  return {
+    headerTitle: selectedMeal.title
+  };
 };
 
 const styles = StyleSheet.create({

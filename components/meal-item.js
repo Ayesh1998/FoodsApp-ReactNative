@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
     height: "85%"
   },
   mealDetail: {
-    paddingHorizontal: 10,
+    paddingHorizontal: wp("5%"),
     justifyContent: "space-between",
     alignItems: "center",
     height: "15%"
