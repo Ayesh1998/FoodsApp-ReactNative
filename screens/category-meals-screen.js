@@ -5,10 +5,13 @@ import {
   heightPercentageToDP as hp
 } from "react-native-responsive-screen";
 import { CATEGORIES } from "../data/dummy";
+import Colors from "../constants/colors";
+
+let selectedcat = "";
 
 const CategoryMealScreen = ({ navigation }) => {
   const categoryId = navigation.getParam("categoryId");
-  const selectedcat = CATEGORIES.find(cat => cat.id == categoryId);
+  selectedcat = CATEGORIES.find(cat => cat.id == categoryId);
   return (
     <View style={styles.screen}>
       <Text>{selectedcat.title}</Text>
@@ -21,6 +24,19 @@ const CategoryMealScreen = ({ navigation }) => {
       />
     </View>
   );
+};
+
+CategoryMealScreen.navigationOptions = navigationData => {
+  const categoryId = navigationData.navigation.getParam("categoryId");
+  let selectedcate = CATEGORIES.find(cat => cat.id == categoryId);
+
+  return {
+    headerTitle: selectedcate.title,
+    headerStyle: {
+      backgroundColor: Colors.primaryColor
+    },
+    headerTintColor: "white"
+  };
 };
 
 const styles = StyleSheet.create({
