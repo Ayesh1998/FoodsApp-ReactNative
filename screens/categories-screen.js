@@ -18,7 +18,17 @@ const CategoriesScreen = ({ navigation }) => {
   const renderItem = data => {
     return (
       <TouchableOpacity
-        style={styles.gridItem}
+        style={{
+          flex: 1,
+          margin: 15,
+          height: hp("15%"),
+          backgroundColor: data.item.color,
+          alignItems: "flex-end",
+          justifyContent: "flex-end",
+          padding: 15,
+          borderRadius: 16,
+          elevation: 6
+        }}
         onPress={() => {
           navigation.navigate({
             routeName: "CategoryMeals",
@@ -29,7 +39,17 @@ const CategoriesScreen = ({ navigation }) => {
         }}
       >
         <View>
-          <Text>{data.item.title}</Text>
+          <Text
+            style={{
+              color: "#30302f",
+              fontSize: 15,
+              fontWeight: "bold",
+              textAlign: "right"
+            }}
+            numberOfLines={2}
+          >
+            {data.item.title}
+          </Text>
         </View>
       </TouchableOpacity>
     );
@@ -39,11 +59,7 @@ const CategoriesScreen = ({ navigation }) => {
 };
 
 CategoriesScreen.navigationOptions = {
-  headerTitle: "Meals Categories",
-  headerStyle: {
-    backgroundColor: Colors.primaryColor
-  },
-  headerTintColor: "white"
+  headerTitle: "Meals Categories"
 };
 
 const styles = StyleSheet.create({
@@ -52,11 +68,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center"
   },
-  gridItem: {
-    flex: 1,
-    margin: 15,
-    height: hp("10%")
-  }
+  gridItem: {}
 });
 
 export default CategoriesScreen;

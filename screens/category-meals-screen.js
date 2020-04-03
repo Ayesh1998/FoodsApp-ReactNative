@@ -31,11 +31,7 @@ CategoryMealScreen.navigationOptions = navigationData => {
   let selectedcate = CATEGORIES.find(cat => cat.id == categoryId);
 
   return {
-    headerTitle: selectedcate.title,
-    headerStyle: {
-      backgroundColor: Colors.primaryColor
-    },
-    headerTintColor: "white"
+    headerTitle: selectedcate.title
   };
 };
 
