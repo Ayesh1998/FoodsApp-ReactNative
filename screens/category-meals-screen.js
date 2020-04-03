@@ -4,10 +4,14 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp
 } from "react-native-responsive-screen";
+import { CATEGORIES } from "../data/dummy";
 
 const CategoryMealScreen = ({ navigation }) => {
+  const categoryId = navigation.getParam("categoryId");
+  const selectedcat = CATEGORIES.find(cat => cat.id == categoryId);
   return (
     <View style={styles.screen}>
+      <Text>{selectedcat.title}</Text>
       <Text>CategoryMealsScreen screen</Text>
       <Button
         title="Details"
