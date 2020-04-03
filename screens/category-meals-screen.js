@@ -1,10 +1,20 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Button } from "react-native";
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp
+} from "react-native-responsive-screen";
 
-const CategoryMealScreen = props => {
+const CategoryMealScreen = ({ navigation }) => {
   return (
     <View style={styles.screen}>
       <Text>CategoryMealsScreen screen</Text>
+      <Button
+        title="Details"
+        onPress={() => {
+          navigation.navigate({ routeName: "MealDetail" });
+        }}
+      />
     </View>
   );
 };

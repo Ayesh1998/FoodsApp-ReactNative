@@ -9,7 +9,7 @@ const mealsNavigator = createStackNavigator({
   CategoryMeals: {
     screen: CategoryMealsScreen
   },
-  FoodDetail: MealDetailsScreen
+  MealDetail: MealDetailsScreen
 });
 
 export default createAppContainer(mealsNavigator);
