@@ -5,6 +5,8 @@ import {
   heightPercentageToDP as hp
 } from "react-native-responsive-screen";
 import { MEALS } from "../data/dummy";
+import { HeaderButtons, Item } from "react-navigation-header-buttons";
+import HeaderButton from "../components/header-button";
 
 const MealDetailsScreen = props => {
   const mealId = props.navigation.getParam("mealId");
@@ -28,7 +30,18 @@ MealDetailsScreen.navigationOptions = navigationData => {
   const mealId = navigationData.navigation.getParam("mealId");
   const selectedMeal = MEALS.find(meal => meal.id === mealId);
   return {
-    headerTitle: selectedMeal.title
+    headerTitle: selectedMeal.title,
+    headerRight: (
+      <HeaderButtons HeaderButtonComponent={HeaderButton}>
+        <Item
+          title="Favorite"
+          iconName="ios-star"
+          onPress={() => {
+            // console.log("Mark as favorite!");
+          }}
+        />
+      </HeaderButtons>
+    )
   };
 };
 
