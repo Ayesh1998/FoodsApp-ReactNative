@@ -12,6 +12,7 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp
 } from "react-native-responsive-screen";
+import Colors from "../constants/colors";
 
 const CategoriesScreen = ({ navigation }) => {
   const renderItem = data => {
@@ -30,6 +31,14 @@ const CategoriesScreen = ({ navigation }) => {
   };
 
   return <FlatList numColumns={2} data={CATEGORIES} renderItem={renderItem} />;
+};
+
+CategoriesScreen.navigationOptions = {
+  headerTitle: "Meals Categories",
+  headerStyle: {
+    backgroundColor: Colors.primaryColor
+  },
+  headerTintColor: "white"
 };
 
 const styles = StyleSheet.create({
