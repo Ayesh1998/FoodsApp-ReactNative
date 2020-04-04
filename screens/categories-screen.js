@@ -5,17 +5,19 @@ import {
   StyleSheet,
   Button,
   FlatList,
-  TouchableOpacity
+  TouchableOpacity,
 } from "react-native";
 import { CATEGORIES } from "../data/dummy";
 import {
   widthPercentageToDP as wp,
-  heightPercentageToDP as hp
+  heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
 import Colors from "../constants/colors";
+import { HeaderButtons, Item } from "react-navigation-header-buttons";
+import HeaderButton from "../components/header-button";
 
 const CategoriesScreen = ({ navigation }) => {
-  const renderItem = data => {
+  const renderItem = (data) => {
     return (
       <TouchableOpacity
         style={{
@@ -27,14 +29,14 @@ const CategoriesScreen = ({ navigation }) => {
           justifyContent: "flex-end",
           padding: 15,
           borderRadius: 16,
-          elevation: 6
+          elevation: 6,
         }}
         onPress={() => {
           navigation.navigate({
             routeName: "CategoryMeals",
             params: {
-              categoryId: data.item.id
-            }
+              categoryId: data.item.id,
+            },
           });
         }}
       >
@@ -44,7 +46,7 @@ const CategoriesScreen = ({ navigation }) => {
               color: "#30302f",
               fontSize: 15,
               fontWeight: "bold",
-              textAlign: "right"
+              textAlign: "right",
             }}
             numberOfLines={2}
           >
@@ -58,17 +60,30 @@ const CategoriesScreen = ({ navigation }) => {
   return <FlatList numColumns={2} data={CATEGORIES} renderItem={renderItem} />;
 };
 
-CategoriesScreen.navigationOptions = {
-  headerTitle: "Meals Categories"
+CategoriesScreen.navigationOptions = (navData) => {
+  return {
+    headerTitle: "Meals Categories",
+    headerLeft: (
+      <HeaderButtons HeaderButtonComponent={HeaderButton}>
+        <Item
+          title="Menu"
+          iconName="ios-menu"
+          onPress={() => {
+            navData.navigation.toggleDrawer();
+          }}
+        />
+      </HeaderButtons>
+    ),
+  };
 };
 
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
   },
-  gridItem: {}
+  gridItem: {},
 });
 
 export default CategoriesScreen;
