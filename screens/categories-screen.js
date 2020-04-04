@@ -20,55 +20,60 @@ import HeaderButton from "../components/header-button";
 const CategoriesScreen = ({ navigation }) => {
   const renderItem = (data) => {
     return (
-      <TouchableOpacity
+      <View
         style={{
           flex: 1,
           margin: 15,
           height: hp("15%"),
-          backgroundColor: data.item.color,
-          alignItems: "flex-end",
+          // backgroundColor: data.item.color,
+          // alignItems: "flex-end",
           justifyContent: "flex-end",
-          padding: 15,
+          padding: 0,
           borderRadius: 16,
           elevation: 6,
-        }}
-        onPress={() => {
-          navigation.navigate({
-            routeName: "CategoryMeals",
-            params: {
-              categoryId: data.item.id,
-            },
-          });
+          overflow: "hidden",
         }}
       >
-        <View>
-          <Text
-            style={{
-              color: "#30302f",
-              fontSize: 15,
-              fontWeight: "bold",
-              textAlign: "right",
+        <TouchableOpacity
+          onPress={() => {
+            navigation.navigate({
+              routeName: "CategoryMeals",
+              params: {
+                categoryId: data.item.id,
+              },
+            });
+          }}
+        >
+          <ImageBackground
+            source={{
+              uri: data.item.color,
             }}
-            numberOfLines={2}
+            style={styles.bgImage}
           >
-            {data.item.title}
-          </Text>
-        </View>
-      </TouchableOpacity>
+            <View>
+              <View style={styles.titleContainer}>
+                <Text
+                  style={{
+                    color: "white",
+                    fontSize: 15,
+                    fontWeight: "bold",
+                    textAlign: "center",
+                  }}
+                  numberOfLines={2}
+                >
+                  {data.item.title}
+                </Text>
+              </View>
+            </View>
+          </ImageBackground>
+        </TouchableOpacity>
+      </View>
     );
   };
 
   return (
-    <View style={{ backgroundColor: "white" }}>
-      <ImageBackground
-        source={{
-          uri:
-            "https://pixabay.com/get/57e8dc4b4b5ba814f6d1867dda35367b1d39dee45659754c_1920.jpg",
-        }}
-        style={styles.bgImage}
-      >
-        <FlatList numColumns={2} data={CATEGORIES} renderItem={renderItem} />
-      </ImageBackground>
+    <View style={{ backgroundColor: "rgba(188, 178, 178, 0.2)" }}>
+      <FlatList numColumns={2} data={CATEGORIES} renderItem={renderItem} />
     </View>
   );
 };
@@ -101,6 +106,16 @@ const styles = StyleSheet.create({
     height: "100%",
     justifyContent: "flex-end",
   },
+  titleContainer: {
+    backgroundColor: "rgba(0,0,0,0.5)",
+    paddingVertical: 5,
+    paddingHorizontal: 12,
+  },
+  mealRow: {
+    flexDirection: "row",
+    height: "100%",
+  },
+
   gridItem: {},
 });
 

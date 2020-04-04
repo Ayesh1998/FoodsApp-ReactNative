@@ -2,16 +2,56 @@ import Category from "../models/category";
 import Meal from "../models/meal";
 
 export const CATEGORIES = [
-  new Category("c1", "Italian", "#f5428d"),
-  new Category("c2", "Quick & Easy", "#F63636"),
-  new Category("c3", "Hamburgers", "#f5a442"),
-  new Category("c4", "German", "#f5d142"),
-  new Category("c5", "Light & Lovely", "#97BCDD"),
-  new Category("c6", "Exotic", "#41d95d"),
-  new Category("c7", "Breakfast", "#9eecff"),
-  new Category("c8", "Asian", "#b9ffb0"),
-  new Category("c9", "French", "#ffc7ff"),
-  new Category("c10", "Summer", "#47fced"),
+  new Category(
+    "c1",
+    "Italian",
+    "https://pixabay.com/get/57e9d6414e54aa14f1dc8460da293276133fdfed555271_640.jpg"
+  ),
+  new Category(
+    "c2",
+    "Quick & Easy",
+    "https://pixabay.com/get/57e3dc424c5aae14f1dc8460da293276133fdfed575174_640.jpg"
+  ),
+  new Category(
+    "c3",
+    "Hamburgers",
+    "https://pixabay.com/get/57e0dd424d52ab14f1dc8460da293276133fdfed555072_640.jpg"
+  ),
+  new Category(
+    "c4",
+    "German",
+    "https://pixabay.com/get/54e7d3424a51b10ff3d89960c62d3f78153ed6e15056_640.jpg"
+  ),
+  new Category(
+    "c5",
+    "Light & Lovely",
+    "https://pixabay.com/get/53e7d64a4c53b10ff3d89960c62d3f78153ed6e05a54_640.jpg"
+  ),
+  new Category(
+    "c6",
+    "Exotic",
+    "https://pixabay.com/get/54e9d6424256aa14f1dc8460da293276133fdfed565079_640.jpg"
+  ),
+  new Category(
+    "c7",
+    "Breakfast",
+    "https://pixabay.com/get/54e8d2414b53ae14f1dc8460da293276133fdfed565675_640.jpg"
+  ),
+  new Category(
+    "c8",
+    "Asian",
+    "https://pixabay.com/get/54e7d2454d51a914f1dc8460da293276133fdfed565479_640.jpg"
+  ),
+  new Category(
+    "c9",
+    "French",
+    "https://pixabay.com/get/57e1d14a4e55ad14f1dc8460da293276133fdfed575872_640.jpg"
+  ),
+  new Category(
+    "c10",
+    "Summer",
+    "https://pixabay.com/get/54e3d3444a50a514f1dc8460da293276133fdfed565571_640.jpg"
+  ),
 ];
 
 export const MEALS = [
