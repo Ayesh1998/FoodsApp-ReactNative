@@ -97,9 +97,23 @@ const filterNavigator = createStackNavigator(
   }
 );
 
-const MainNavigator = createDrawerNavigator({
-  MealsFav: mealsTabNavigator,
-  Filters: filterNavigator,
-});
+const MainNavigator = createDrawerNavigator(
+  {
+    MealsFav: {
+      screen: mealsTabNavigator,
+      navigationOptions: {
+        drawerLabel: "Meals",
+      },
+    },
+    Filters: filterNavigator,
+  },
+  {
+    drawerBackgroundColor: "rgba(255, 255, 255, 0.9)",
+    contentOptions: {
+      activeTintColor: Colors.primaryColor,
+      labelStyle: {},
+    },
+  }
+);
 
 export default createAppContainer(MainNavigator);
