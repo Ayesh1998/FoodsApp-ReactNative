@@ -6,6 +6,7 @@ import {
   Button,
   FlatList,
   TouchableOpacity,
+  ImageBackground,
 } from "react-native";
 import { CATEGORIES } from "../data/dummy";
 import {
@@ -57,7 +58,19 @@ const CategoriesScreen = ({ navigation }) => {
     );
   };
 
-  return <FlatList numColumns={2} data={CATEGORIES} renderItem={renderItem} />;
+  return (
+    <View style={{ backgroundColor: "white" }}>
+      <ImageBackground
+        source={{
+          uri:
+            "https://pixabay.com/get/57e8dc4b4b5ba814f6d1867dda35367b1d39dee45659754c_1920.jpg",
+        }}
+        style={styles.bgImage}
+      >
+        <FlatList numColumns={2} data={CATEGORIES} renderItem={renderItem} />
+      </ImageBackground>
+    </View>
+  );
 };
 
 CategoriesScreen.navigationOptions = (navData) => {
@@ -82,6 +95,11 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+  },
+  bgImage: {
+    width: "100%",
+    height: "100%",
+    justifyContent: "flex-end",
   },
   gridItem: {},
 });
