@@ -18,6 +18,7 @@
     "react-native": "https://github.com/expo/react-native/archive/sdk-37.0.0.tar.gz",
     "react-native-elements": "^1.2.7",
     "react-native-gesture-handler": "~1.6.0",
+    "react-native-paper": "^3.7.0",
     "react-native-reanimated": "~1.7.0",
     "react-native-responsive-screen": "^1.4.1",
     "react-native-safe-area-context": "^0.7.3",
@@ -27,6 +28,7 @@
     "react-navigation": "^4.3.6",
     "react-navigation-drawer": "^2.4.11",
     "react-navigation-header-buttons": "^3.0.5",
+    "react-navigation-material-bottom-tabs": "^2.2.10",
     "react-navigation-stack": "^2.3.11",
     "react-navigation-tabs": "^2.8.11"
   },

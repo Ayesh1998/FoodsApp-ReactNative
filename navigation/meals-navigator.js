@@ -8,6 +8,7 @@ import CategoryMealsScreen from "../screens/category-meals-screen";
 import Colors from "../constants/colors";
 import FavouriteScreen from "../screens/favourite-screen";
 import { Ionicons } from "@expo/vector-icons";
+import { createMaterialBottomTabNavigator } from "react-navigation-material-bottom-tabs";
 
 const mealsNavigator = createStackNavigator(
   {
@@ -28,7 +29,7 @@ const mealsNavigator = createStackNavigator(
   }
 );
 
-const mealsTabNavigator = createBottomTabNavigator(
+const mealsTabNavigator = createMaterialBottomTabNavigator(
   {
     Meals: {
       screen: mealsNavigator,
@@ -42,6 +43,7 @@ const mealsTabNavigator = createBottomTabNavigator(
             />
           );
         },
+        tabBarColor: Colors.primaryColor,
       },
     },
     Favourites: {
@@ -52,14 +54,13 @@ const mealsTabNavigator = createBottomTabNavigator(
             <Ionicons name="ios-star" size={25} color={tabInfo.tintColor} />
           );
         },
+        tabBarColor: Colors.primaryColor,
       },
     },
   },
   {
-    tabBarOptions: {
-      // activeBackgroundColor: Colors.accentColor,
-      activeTintColor: Colors.primaryColor,
-    },
+    activeTintColor: Colors.primaryColor,
+    shifting: true,
   }
 );
 
