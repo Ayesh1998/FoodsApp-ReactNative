@@ -11,7 +11,7 @@ import { useSelector } from "react-redux";
 const FavouriteScreen = (props) => {
   let selectedcat = "";
 
-  const favouriteMeals = useSelector((state) => state.meals.favouriteMeals);
+  const favMeals = useSelector((state) => state.meals.favoriteMeals);
 
   // selectedcat = CATEGORIES.find((cat) => cat.id == "c1");
 
@@ -36,7 +36,7 @@ const FavouriteScreen = (props) => {
   };
   return (
     <View style={styles.screen}>
-      <FlatList data={favouriteMeals} renderItem={renderingItem} />
+      <FlatList data={favMeals} renderItem={renderingItem} />
     </View>
   );
 };

@@ -5,52 +5,52 @@ export const CATEGORIES = [
   new Category(
     "c1",
     "Italian",
-    "https://pixabay.com/get/57e9d6414e54aa14f1dc8460da293276133fdfed555271_640.jpg"
+    "https://cdn.pixabay.com/photo/2016/10/25/13/29/smoked-salmon-salad-1768890_1280.jpg"
   ),
   new Category(
     "c2",
     "Quick & Easy",
-    "https://pixabay.com/get/57e3dc424c5aae14f1dc8460da293276133fdfed575174_640.jpg"
+    "https://cdn.pixabay.com/photo/2017/05/01/05/18/pastry-2274750_1280.jpg"
   ),
   new Category(
     "c3",
     "Hamburgers",
-    "https://pixabay.com/get/57e0dd424d52ab14f1dc8460da293276133fdfed555072_640.jpg"
+    "https://cdn.pixabay.com/photo/2014/10/23/18/05/burger-500054_1280.jpg"
   ),
   new Category(
     "c4",
     "German",
-    "https://pixabay.com/get/54e7d3424a51b10ff3d89960c62d3f78153ed6e15056_640.jpg"
+    "https://cdn.pixabay.com/photo/2018/03/31/19/29/schnitzel-3279045_1280.jpg"
   ),
   new Category(
     "c5",
     "Light & Lovely",
-    "https://pixabay.com/get/53e7d64a4c53b10ff3d89960c62d3f78153ed6e05a54_640.jpg"
+    "https://cdn.pixabay.com/photo/2018/04/09/18/26/asparagus-3304997_1280.jpg"
   ),
   new Category(
     "c6",
     "Exotic",
-    "https://pixabay.com/get/54e9d6424256aa14f1dc8460da293276133fdfed565079_640.jpg"
+    "https://cdn.pixabay.com/photo/2018/07/10/21/23/pancake-3529653_1280.jpg"
   ),
   new Category(
     "c7",
     "Breakfast",
-    "https://pixabay.com/get/54e8d2414b53ae14f1dc8460da293276133fdfed565675_640.jpg"
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Spaghetti_Bolognese_mit_Parmesan_oder_Grana_Padano.jpg/800px-Spaghetti_Bolognese_mit_Parmesan_oder_Grana_Padano.jpg"
   ),
   new Category(
     "c8",
     "Asian",
-    "https://pixabay.com/get/54e7d2454d51a914f1dc8460da293276133fdfed565479_640.jpg"
+    "https://cdn.pixabay.com/photo/2016/10/25/13/29/smoked-salmon-salad-1768890_1280.jpg"
   ),
   new Category(
     "c9",
     "French",
-    "https://pixabay.com/get/57e1d14a4e55ad14f1dc8460da293276133fdfed575872_640.jpg"
+    "https://cdn.pixabay.com/photo/2014/08/07/21/07/souffle-412785_1280.jpg"
   ),
   new Category(
     "c10",
     "Summer",
-    "https://pixabay.com/get/54e3d3444a50a514f1dc8460da293276133fdfed565571_640.jpg"
+    "https://cdn.pixabay.com/photo/2018/07/11/21/51/toast-3532016_1280.jpg"
   ),
 ];
 
