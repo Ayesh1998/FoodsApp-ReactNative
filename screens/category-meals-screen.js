@@ -47,6 +47,15 @@ const CategoryMealScreen = ({ navigation }) => {
       />
     );
   };
+  if (selectedMeals.length === 0) {
+    return (
+      <View style={styles.content}>
+        <Text style={{ color: "red", fontWeight: "bold" }}>
+          No meals found, check ur filters
+        </Text>
+      </View>
+    );
+  }
   return (
     <View style={styles.screen}>
       <FlatList data={selectedMeals} renderItem={renderingItem} />
@@ -65,6 +74,11 @@ CategoryMealScreen.navigationOptions = (navigationData) => {
 
 const styles = StyleSheet.create({
   screen: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  content: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
