@@ -23,13 +23,13 @@ const CategoriesScreen = ({ navigation }) => {
       <View
         style={{
           flex: 1,
-          margin: 15,
+          margin: wp("3%"),
           height: hp("15%"),
           // backgroundColor: data.item.color,
           // alignItems: "flex-end",
           justifyContent: "flex-end",
           padding: 0,
-          borderRadius: 16,
+          borderRadius: 10,
           elevation: 6,
           overflow: "hidden",
         }}
@@ -108,8 +108,8 @@ const styles = StyleSheet.create({
   },
   titleContainer: {
     backgroundColor: "rgba(0,0,0,0.5)",
-    paddingVertical: 5,
-    paddingHorizontal: 12,
+    paddingVertical: hp("1%"),
+    paddingHorizontal: wp("1%"),
   },
   mealRow: {
     flexDirection: "row",

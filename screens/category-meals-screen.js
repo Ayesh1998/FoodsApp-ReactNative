@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, StyleSheet, Button, FlatList } from "react-native";
 import {
   widthPercentageToDP as wp,
-  heightPercentageToDP as hp
+  heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
 import { CATEGORIES, MEALS } from "../data/dummy";
 import Colors from "../constants/colors";
@@ -12,13 +12,13 @@ let selectedcat = "";
 
 const CategoryMealScreen = ({ navigation }) => {
   const categoryId = navigation.getParam("categoryId");
-  selectedcat = CATEGORIES.find(cat => cat.id == categoryId);
+  selectedcat = CATEGORIES.find((cat) => cat.id == categoryId);
 
   const selectedMeals = MEALS.filter(
-    meal => meal.categoryIds.indexOf(categoryId) >= 0
+    (meal) => meal.categoryIds.indexOf(categoryId) >= 0
   );
 
-  const renderingItem = itemData => {
+  const renderingItem = (itemData) => {
     return (
       <MealItem
         title={itemData.item.title}
@@ -30,8 +30,8 @@ const CategoryMealScreen = ({ navigation }) => {
           navigation.navigate({
             routeName: "MealDetail",
             params: {
-              mealId: itemData.item.id
-            }
+              mealId: itemData.item.id,
+            },
           });
         }}
       />
@@ -44,12 +44,12 @@ const CategoryMealScreen = ({ navigation }) => {
   );
 };
 
-CategoryMealScreen.navigationOptions = navigationData => {
+CategoryMealScreen.navigationOptions = (navigationData) => {
   const categoryId = navigationData.navigation.getParam("categoryId");
-  let selectedcate = CATEGORIES.find(cat => cat.id == categoryId);
+  let selectedcate = CATEGORIES.find((cat) => cat.id == categoryId);
 
   return {
-    headerTitle: selectedcate.title
+    headerTitle: selectedcate.title,
   };
 };
 
@@ -57,8 +57,8 @@ const styles = StyleSheet.create({
   screen: {
     flex: 1,
     justifyContent: "center",
-    alignItems: "center"
-  }
+    alignItems: "center",
+  },
 });
 
 export default CategoryMealScreen;
