@@ -15,6 +15,16 @@ const FavouriteScreen = (props) => {
 
   // selectedcat = CATEGORIES.find((cat) => cat.id == "c1");
 
+  if (favMeals.length === 0 || !favMeals) {
+    return (
+      <View style={styles.content}>
+        <Text style={{ color: "red", fontWeight: "bold" }}>
+          No favorite meals found. Start adding some!
+        </Text>
+      </View>
+    );
+  }
+
   const renderingItem = (itemData) => {
     return (
       <MealItem
@@ -45,6 +55,11 @@ FavouriteScreen.navigationOptions = {};
 
 const styles = StyleSheet.create({
   screen: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  content: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",

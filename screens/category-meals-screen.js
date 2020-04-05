@@ -22,7 +22,12 @@ const CategoryMealScreen = ({ navigation }) => {
     (meal) => meal.categoryIds.indexOf(categoryId) >= 0
   );
 
+  const favoriteMeals = useSelector((state) => state.meals.favoriteMeals);
+
   const renderingItem = (itemData) => {
+    const isFavorite = favoriteMeals.some(
+      (meal) => meal.id === itemData.item.id
+    );
     return (
       <MealItem
         title={itemData.item.title}
@@ -35,6 +40,7 @@ const CategoryMealScreen = ({ navigation }) => {
             routeName: "MealDetail",
             params: {
               mealId: itemData.item.id,
+              isFav: isFavorite,
             },
           });
         }}

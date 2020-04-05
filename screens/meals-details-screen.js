@@ -34,6 +34,14 @@ const MealDetailsScreen = (props) => {
 
   const selectedMeal = Meals.find((meal) => meal.id === mealId);
 
+  const currentMealIsFavorite = useSelector((state) =>
+    state.meals.favoriteMeals.some((meal) => meal.id === mealId)
+  );
+
+  useEffect(() => {
+    props.navigation.setParams({ isFav: currentMealIsFavorite });
+  }, [currentMealIsFavorite]);
+
   const dispatch = useDispatch();
 
   const toggleFavoriteHandler = useCallback(() => {
@@ -68,12 +76,18 @@ const MealDetailsScreen = (props) => {
 MealDetailsScreen.navigationOptions = (navigationData) => {
   const mealId = navigationData.navigation.getParam("mealId");
   const selectedMeal = MEALS.find((meal) => meal.id === mealId);
+  const isFavorite = navigationData.navigation.getParam("isFav");
   const toggleFavorite = navigationData.navigation.getParam("toggleFav");
+
   return {
     headerTitle: selectedMeal.title,
     headerRight: (
       <HeaderButtons HeaderButtonComponent={HeaderButton}>
-        <Item title="Favorite" iconName="ios-star" onPress={toggleFavorite} />
+        <Item
+          title="Favorite"
+          iconName={isFavorite ? "ios-star" : "ios-star-outline"}
+          onPress={toggleFavorite}
+        />
       </HeaderButtons>
     ),
   };
