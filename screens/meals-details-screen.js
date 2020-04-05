@@ -14,6 +14,7 @@ import {
 import { MEALS } from "../data/dummy";
 import { HeaderButtons, Item } from "react-navigation-header-buttons";
 import HeaderButton from "../components/header-button";
+import { useSelector } from "react-redux";
 
 const ListItem = (props) => {
   return (
@@ -24,9 +25,11 @@ const ListItem = (props) => {
 };
 
 const MealDetailsScreen = (props) => {
+  const Meals = useSelector((state) => state.meals.meals);
+
   const mealId = props.navigation.getParam("mealId");
 
-  const selectedMeal = MEALS.find((meal) => meal.id === mealId);
+  const selectedMeal = Meals.find((meal) => meal.id === mealId);
 
   return (
     <ScrollView>

@@ -6,15 +6,14 @@ import {
 } from "react-native-responsive-screen";
 import MealItem from "../components/meal-item";
 import { MEALS, CATEGORIES } from "../data/dummy";
+import { useSelector } from "react-redux";
 
 const FavouriteScreen = (props) => {
   let selectedcat = "";
 
-  // selectedcat = CATEGORIES.find((cat) => cat.id == "c1");
+  const favouriteMeals = useSelector((state) => state.meals.favouriteMeals);
 
-  const selectedMeals = MEALS.filter(
-    (meal) => meal.categoryIds.indexOf("c1") >= 0
-  );
+  // selectedcat = CATEGORIES.find((cat) => cat.id == "c1");
 
   const renderingItem = (itemData) => {
     return (
@@ -37,7 +36,7 @@ const FavouriteScreen = (props) => {
   };
   return (
     <View style={styles.screen}>
-      <FlatList data={selectedMeals} renderItem={renderingItem} />
+      <FlatList data={favouriteMeals} renderItem={renderingItem} />
     </View>
   );
 };

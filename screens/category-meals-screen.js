@@ -7,14 +7,18 @@ import {
 import { CATEGORIES, MEALS } from "../data/dummy";
 import Colors from "../constants/colors";
 import MealItem from "../components/meal-item";
+import { useSelector } from "react-redux";
 
 let selectedcat = "";
 
 const CategoryMealScreen = ({ navigation }) => {
   const categoryId = navigation.getParam("categoryId");
+
+  const filteredMeals = useSelector((state) => state.meals.filteredMeals);
+
   selectedcat = CATEGORIES.find((cat) => cat.id == categoryId);
 
-  const selectedMeals = MEALS.filter(
+  const selectedMeals = filteredMeals.filter(
     (meal) => meal.categoryIds.indexOf(categoryId) >= 0
   );
 
